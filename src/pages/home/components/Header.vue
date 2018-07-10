@@ -14,28 +14,26 @@
         </div>
     </div>
 </template>
-
 <script>
 export default {
   name: "HomeHeader"
 };
 </script>
-
 <style lang='less' scoped>
-@import '../../../assets/styles/less/varibles.less';
+@import "../../../assets/styles/less/varibles.less";
 .header {
   display: flex;
   line-height: 0.86rem;
-//   background: #00bcd4;
-  background:@bgColor;
+  //   background: #00bcd4;
+  background: @bgColor;
   color: #fff;
   .header-left {
     width: 0.64rem;
     float: left;
     text-align: center;
-    .back-icon{
-        font-size: 0.4rem;
-        text-align: center;
+    .back-icon {
+      font-size: 0.4rem;
+      text-align: center;
     }
   }
   .header-input {
@@ -47,15 +45,15 @@ export default {
     margin-left: 0.2rem;
     color: #ccc;
     line-height: 0.64rem;
-    padding-left:0.2rem;
+    padding-left: 0.2rem;
   }
   .header-right {
     width: 1.24rem;
     float: right;
     text-align: center;
-    .arror-icon{
-        margin-left: -0.04rem;
-        font-size: .24rem;
+    .arror-icon {
+      margin-left: -0.04rem;
+      font-size: 0.24rem;
     }
   }
 }
