@@ -14,6 +14,11 @@ fastClick .attach(document.body);
 import 'less/varibles.less';
 //引入字体图标的css文件
 import 'css/iconfont.css';
+//引入vue-awesome-swiper插件
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 new Vue({
   el: '#app',
   router,

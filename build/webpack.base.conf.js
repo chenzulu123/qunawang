@@ -32,7 +32,9 @@ module.exports = {
       // 设置less文件夹的路径别名
       'less':resolve('src/assets/styles/less'),
       //设置文件的路径别名
-      'styles':resolve('src/assets/styles')
+      'styles':resolve('src/assets/styles'),
+      //设置图片文件夹images的文件夹路径别名
+      'images':resolve('src/assets/images')
     }
   },
   module: {
