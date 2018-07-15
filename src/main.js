@@ -18,6 +18,12 @@ import 'css/iconfont.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
+//引入Mock.js文件
+require('./Mock/index');
+//引入axios插件
+import axios from 'axios';
+//设置axios为全局使用
+Vue.prototype.$http = axios;
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 new Vue({
   el: '#app',

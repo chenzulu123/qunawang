@@ -24,30 +24,26 @@ export default {
         //开启分页组件的显示
         pagination: ".swiper-pagination"
       },
-      swiperList: [
-        {
-          id: "001",
-          //imgUrl: "../../../assets/images/swiper1.jpg"
-          //采用上面的那种方式引入图片路径然后再动态绑定是无法进行显示的
-          imgUrl: require("../../../assets/images/swiper1.jpg")
-        },
-        {
-          id: "002",
-          imgUrl: require("../../../assets/images/swiper2.jpg")
-        },
-        {
-          id: "003",
-          imgUrl: require("../../../assets/images/swiper3.jpg")
-        },
-        {
-          id: "004",
-          imgUrl: require("../../../assets/images/swiper4.jpg")
-        }
-      ]
+      swiperList: []
     };
   },
+  mounted() {
+    this.getSwiperImgs();
+  },
   methods: {
-    callback() {}
+    callback() {},
+    //获取轮播图的图片地址和id信息
+    getSwiperImgs() {
+      const _this = this;
+      this.$http
+        .get("getSwiperImgs")
+        .then(res => {
+          _this.swiperList = res.data.imagesList;
+        })
+        .catch(err => {
+          console.log("getSwiperImgs---" + err);
+        });
+    }
   }
 };
 </script>
