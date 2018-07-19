@@ -1,16 +1,23 @@
 'use strict'
 // Template version: 1.3.1
 // see http://vuejs-templates.github.io/webpack for documentation.
-
 const path = require('path')
-
 module.exports = {
   dev: {
-
-    // Paths
+    // 配置地址转发功能
+    // Paths webpack-dev-server
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api':{
+        target:"http://localhost:8080",
+        changeOrigin:true,//是否允许跨域
+        pathRewrite:{
+          //把以/api开头的替换成/static/mock
+          "^/api":"/static/mock"
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -1,7 +1,9 @@
 <template>
     <div class="wrapper">
         <!--轮播图的定义和使用-->
-    <swiper :options="swiperOption">
+        <!--v-if="swiperList.length"解决轮播图默认显示第四张图片的问题-->
+        <!-- 在页面上要避免使用逻辑代码 -->
+    <swiper :options="swiperOption" v-if="showSwipper">
     <swiper-slide v-for="item of swiperList" :key="item.id">
         <img :src="item.imgUrl" alt="swiper" class="swiper-img">
     </swiper-slide>
@@ -43,6 +45,12 @@ export default {
         .catch(err => {
           console.log("getSwiperImgs---" + err);
         });
+    }
+  },
+  //计算属性
+  computed:{
+    showSwipper(){
+      return this.swiperList.length;
     }
   }
 };

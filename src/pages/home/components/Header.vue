@@ -9,14 +9,18 @@
             输入城市/景点/游玩主题
         </div>
         <div class="header-right">
-            城市
+            {{name}}
             <span class="iconfont arror-icon">&#xe64a;</span>
         </div>
     </div>
 </template>
 <script>
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  props:{
+    //传递的属性名称为name，类型为String(字符串)类型的首字母需要大写
+    name:String
+  }
 };
 </script>
 <style lang='less' scoped>
