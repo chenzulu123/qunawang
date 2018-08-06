@@ -15,26 +15,35 @@
     import HomeRecommend from './components/Recommend'
     export default {
         name: 'Home',
+        /*
+         * Vue组件的注册
+         */
         components: {
             HomeHeader,
             HomeSwiper,
             HomeIcons,
             HomeRecommend
         },
-        data(){
+        /*
+        初始化值
+         */
+        data() {
             return {
-                name:""
+                name: ""
             }
         },
+        /**
+            Vue方法的定义
+         */
         methods: {
             getHomeInfo() {
                 const _this = this;
                 this.$http.get('/api/index.json')
-                .then(function(res) {
-                    _this.name = res.data.name;
-                    console.log(res);
-                    
-                })
+                    .then(function(res) {
+                        _this.name = res.data.name;
+                        console.log(res);
+    
+                    })
             },
         },
         mounted() {
